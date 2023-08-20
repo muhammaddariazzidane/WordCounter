@@ -26,7 +26,7 @@ export default function WordCounter({ hitungKata, jumlah }) {
   );
 
   return (
-    <div className="form-control p-6  rounded-lg shadow-md">
+    <div className="form-control p-4 lg:p-6  rounded-lg shadow-md">
       <textarea
         tabIndex={1}
         ref={textareaRef}

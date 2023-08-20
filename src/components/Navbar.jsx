@@ -39,7 +39,7 @@ export default function Navbar() {
           </div> */}
         </div>
         <div className="navbar-center">
-          <a className="font-semibold bg-clip-text text-transparent bg-gradient-to-br from-amber-400 to-indigo-600 text-3xl">
+          <a className="font-semibold bg-clip-text text-transparent bg-gradient-to-br from-red-400 to-indigo-600 text-3xl">
             Z-WordCounter
           </a>
         </div>

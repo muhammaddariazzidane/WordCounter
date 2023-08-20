@@ -17,7 +17,7 @@ export default function App() {
     <>
       <Suspense fallback={<Loading />}>
         <Navbar />
-        <div className=" w-full py-12 px-6 lg:px-12">
+        <div className=" w-full py-12 px-3 lg:px-12">
           <WordCounter jumlah={jumlah} hitungKata={hitungKata} />
         </div>
         <Footer />
