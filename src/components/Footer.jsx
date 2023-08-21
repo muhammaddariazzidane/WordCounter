@@ -28,7 +28,10 @@ export default function Footer() {
         >
           <FaLinkedin className="w-6 h-6 text-blue-800" />
         </a>
-        <a href="https://github.com/muhammaddariazzidane" target="_blank">
+        <a
+          href="https://github.com/muhammaddariazzidane/WordCounter"
+          target="_blank"
+        >
           <FaGithub className="w-6 h-6 text-slate-500" />
         </a>
         <a href="https://dariaz-zidane.netlify.app/" target="_blank">
