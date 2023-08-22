@@ -35,7 +35,7 @@ export default function WordCounter({ hitungKata, jumlah, jumlahKarakter }) {
   );
 
   return (
-    <div className="form-control p-4 lg:p-6  rounded-lg shadow-md">
+    <div className="form-control p-4 lg:p-6 dark:bg-slate-800 bg-white transition-all duration-300 rounded-lg shadow-md">
       {notif && <Alert />}
       {copied && <Alert message="Copied !" />}
       <textarea
@@ -43,7 +43,7 @@ export default function WordCounter({ hitungKata, jumlah, jumlahKarakter }) {
         ref={textareaRef}
         autoFocus
         onKeyUp={hitungKata}
-        className="textarea placeholder:text-lg placeholder: selection:bg-indigo-600 selection:text-white selection:rounded-lg p-5 py-3  border-0 ring-1 ring-indigo-200 focus:ring-indigo-300 focus:outline-none textarea-bordered h-64 text-lg"
+        className="textarea bg-white transition-colors duration-300  dark:bg-slate-900 placeholder:text-lg placeholder: selection:bg-indigo-600 selection:text-white selection:rounded-lg p-5 py-3 dark:text-slate-100 text-black textarea-primary focus:border-none textarea-bordered h-80  text-lg"
         placeholder="Ketik atau tempelkan teks anda disini !"
       ></textarea>
       <div className="label flex justify-between md:items-center lg:items-center sm:items-center items-end  ">
@@ -62,8 +62,10 @@ export default function WordCounter({ hitungKata, jumlah, jumlahKarakter }) {
           <button
             type="button"
             title={copied ? "Success" : "Copy to clipboard"}
-            className={`p-1.5 lg:p-2 md:p-2 rounded-md lg:px-3 md:px-3 px-2 ${
-              copied ? "btn-success" : "btn-neutral"
+            className={`p-1.5 lg:p-2 md:p-2 rounded-md lg:px-3 md:px-3 px-2 transition-all duration-300 ${
+              copied
+                ? "btn-success"
+                : "btn-neutral dark:bg-slate-600  dark:hover:bg-slate-700"
             } flex ml-2`}
             onClick={copyToClipboard}
           >

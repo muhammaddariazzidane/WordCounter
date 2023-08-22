@@ -19,7 +19,7 @@ export default function App() {
     <>
       <Suspense fallback={<Loading />}>
         <Navbar />
-        <div className=" w-full py-12 px-3 lg:px-12">
+        <div className="transition-all dark:bg-slate-800  bg-white duration-300 w-full py-12 px-3 lg:px-12">
           <WordCounter
             jumlah={jumlah}
             jumlahKarakter={jumlahKarakter}
