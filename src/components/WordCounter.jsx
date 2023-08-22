@@ -8,8 +8,7 @@ export default function WordCounter({ hitungKata, jumlah, jumlahKarakter }) {
   const textareaRef = useRef();
 
   const copyToClipboard = () => {
-    console.log(jumlah);
-    if (jumlah == 0) {
+    if (!jumlah) {
       setNotif(true);
       setTimeout(() => {
         setNotif(false);
@@ -38,6 +37,7 @@ export default function WordCounter({ hitungKata, jumlah, jumlahKarakter }) {
   return (
     <div className="form-control p-4 lg:p-6  rounded-lg shadow-md">
       {notif && <Alert />}
+      {copied && <Alert message="Copied !" />}
       <textarea
         tabIndex={1}
         ref={textareaRef}
@@ -63,13 +63,15 @@ export default function WordCounter({ hitungKata, jumlah, jumlahKarakter }) {
             type="button"
             title={copied ? "Success" : "Copy to clipboard"}
             className={`p-1.5 lg:p-2 md:p-2 rounded-md lg:px-3 md:px-3 px-2 ${
-              copied ? "btn-primary" : "btn-neutral"
+              copied ? "btn-success" : "btn-neutral"
             } flex ml-2`}
             onClick={copyToClipboard}
           >
             {copied ? (
               <>
-                <span className="text-white">Copied !</span>
+                <span className="text-white lg:block md:block sm:block xl:block hidden">
+                  Copied !
+                </span>
                 <CheckIcon className="w-6 h-6 text-white" />
               </>
             ) : (
