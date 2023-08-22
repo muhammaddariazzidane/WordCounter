@@ -5,3 +5,6 @@
 * {
   font-family: "Lato", sans-serif;
 }
+body {
+  @apply min-h-screen h-full bg-white dark:bg-slate-800;
+}

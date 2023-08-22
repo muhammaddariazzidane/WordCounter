@@ -5,8 +5,6 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <div className="bg-whihte">
-      <App />
-    </div>
+    <App />
   </React.StrictMode>
 );
