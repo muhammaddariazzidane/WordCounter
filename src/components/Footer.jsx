@@ -1,5 +1,4 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -25,16 +24,25 @@ export default function Footer() {
         <a
           href="https://www.linkedin.com/in/muhammad-dariaz-zidane/"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="linkedin Muhammad Dariaz Zidane"
         >
           <FaLinkedin className="w-8 h-8 text-blue-800 bg-white dark:bg-slate-200 transition-all duration-300 rounded-sm p-0.5" />
         </a>
         <a
           href="https://github.com/muhammaddariazzidane/WordCounter"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="github z-word counter"
         >
           <FaGithub className="w-8 h-8 text-black  bg-white dark:bg-slate-200 transition-all duration-300 rounded-full p-1" />
         </a>
-        <a href="https://dariaz-zidane.netlify.app/" target="_blank">
+        <a
+          href="https://muhammad-dariaz-zidane.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Buka situs web eksternal (Muhammad Dariaz Zidane)"
+        >
           <FaExternalLinkAlt className="w-8 h-8 p-1 bg-white dark:bg-slate-200 transition-all duration-300 rounded-sm text-sky-500 dark:text-sky-700" />
         </a>
       </div>

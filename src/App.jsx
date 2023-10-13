@@ -1,8 +1,8 @@
-import React, { useState, Suspense } from "react";
-import Navbar from "./components/Navbar";
-import Loading from "./utils/Loading";
-import Footer from "./components/Footer";
-const WordCounter = React.lazy(() => import("./components/WordCounter"));
+import React, { useState, Suspense } from 'react';
+import Navbar from './components/Navbar';
+import Loading from './utils/Loading';
+import Footer from './components/Footer';
+const WordCounter = React.lazy(() => import('./components/WordCounter'));
 
 export default function App() {
   const [jumlah, setJumlah] = useState(0);
@@ -10,9 +10,12 @@ export default function App() {
 
   const hitungKata = (e) => {
     const inputText = e.target.value;
-    const jumlahKata = inputText.trim().split(/\s+/).filter(Boolean).length;
-    setJumlah(jumlahKata);
-    setJumlahKarakter(inputText.length);
+    const kata = inputText
+      .trim()
+      .split(/\s+/)
+      .filter((word) => word.length > 0);
+    setJumlah(kata.length);
+    setJumlahKarakter(inputText.replace(/\n/g, '').length);
   };
 
   return (
