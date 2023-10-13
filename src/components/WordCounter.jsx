@@ -1,8 +1,11 @@
-import React, { useState, useRef } from "react";
-import { ClipboardIcon, CheckIcon } from "@heroicons/react/24/solid";
-import Alert from "./Alert";
+/* eslint-disable react/prop-types */
+import { useState, useRef } from 'react';
+import { ClipboardIcon, CheckIcon } from '@heroicons/react/24/solid';
+import Alert from './Alert';
 
-export default function WordCounter({ hitungKata, jumlah, jumlahKarakter }) {
+export default function WordCounter(props) {
+  const { hitungKata, jumlah, jumlahKarakter } = props;
+
   const [copied, setCopied] = useState(false);
   const [notif, setNotif] = useState(false);
   const textareaRef = useRef();
@@ -15,7 +18,7 @@ export default function WordCounter({ hitungKata, jumlah, jumlahKarakter }) {
       }, 2000);
     } else {
       textareaRef.current.select();
-      document.execCommand("copy");
+      document.execCommand('copy');
       setCopied(true);
       setTimeout(() => {
         setCopied(false);
@@ -31,7 +34,7 @@ export default function WordCounter({ hitungKata, jumlah, jumlahKarakter }) {
   };
 
   const { totalParagraphs } = hitungHurufDanParagraf(
-    textareaRef.current?.value || ""
+    textareaRef.current?.value || ''
   );
 
   return (
@@ -39,33 +42,33 @@ export default function WordCounter({ hitungKata, jumlah, jumlahKarakter }) {
       {notif && <Alert />}
       {copied && <Alert message="Copied !" />}
       <textarea
-        tabIndex={1}
+        rows={11}
         ref={textareaRef}
         autoFocus
-        onKeyUp={hitungKata}
-        className="textarea bg-white transition-colors duration-300  dark:bg-slate-900 placeholder:text-lg placeholder: selection:bg-indigo-600 selection:text-white selection:rounded-lg p-5 py-3 dark:text-slate-100 text-black textarea-primary focus:border-none textarea-bordered h-80  text-lg"
+        onChange={hitungKata}
+        className="textarea bg-white transition-colors duration-300  dark:bg-slate-900  md:placeholder:text-lg placeholder:text-base placeholder: selection:bg-indigo-600 selection:text-white selection:rounded-lg p-5 py-3 placeholder:text-gray-600 dark:placeholder:text-gray-400 dark:text-slate-100 text-black textarea-primary focus:border-none textarea-bordered  text-lg"
         placeholder="Ketik atau tempelkan teks anda disini !"
       ></textarea>
-      <div className="label flex justify-between md:items-center lg:items-center sm:items-center items-end  ">
+      <div className="label flex md:mt-0 mt-2 justify-between md:items-center lg:items-center sm:items-center items-end  ">
         <div className="flex gap-2 flex-wrap">
-          <span className="label-text-alt rounded-full p-1.5  shadow bg-primary px-3 text-white text-[.955rem]">
+          <span className="label-text-alt rounded-full p-1.5  shadow bg-primary px-3 text-white text-sm md:text-[.955rem]">
             {jumlah} Kata
           </span>
-          <span className="label-text-alt rounded-full p-1.5 shadow bg-neutral px-3 text-white text-[.955rem]">
+          <span className="label-text-alt rounded-full p-1.5 shadow bg-neutral px-3 text-white text-sm md:text-[.955rem]">
             {totalParagraphs} Paragraf
           </span>
-          <span className="label-text-alt rounded-full p-1.5 shadow bg-accent-focus px-3 text-white text-[.955rem]">
+          <span className="label-text-alt rounded-full p-1.5 shadow bg-green-700 px-3 text-white text-sm md:text-[.955rem]">
             {jumlahKarakter} Karakter
           </span>
         </div>
         <div className="max-w-xs">
           <button
             type="button"
-            title={copied ? "Success" : "Copy to clipboard"}
+            title={copied ? 'Success' : 'Copy to clipboard'}
             className={`p-1.5 lg:p-2 md:p-2 rounded-md lg:px-3 md:px-3 px-2 transition-all duration-300 ${
               copied
-                ? "btn-success"
-                : "btn-neutral dark:bg-slate-600  dark:hover:bg-slate-700"
+                ? 'btn-success'
+                : 'btn-neutral dark:bg-slate-600  dark:hover:bg-slate-700'
             } flex ml-2`}
             onClick={copyToClipboard}
           >
