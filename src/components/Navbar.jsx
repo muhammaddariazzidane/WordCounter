@@ -37,7 +37,11 @@ export default function Navbar() {
       <div className="navbar py-5 px-6 shadow dark:bg-slate-800 bg-white transition-colors duration-300 ">
         <div className="navbar-start"></div>
         <div className="navbar-center">
-          <div className="font-semibold bg-clip-text text-transparent bg-gradient-to-br from-red-400 to-indigo-600 text-2xl md:text-3xl">
+          <div
+            className="font-semibold 
+            dark:text-gray-200  text-primary
+           text-2xl md:text-3xl"
+          >
             Z-WordCounter
           </div>
         </div>
