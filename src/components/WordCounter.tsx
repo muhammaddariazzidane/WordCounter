@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useRef } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Clipboard, ClipboardCheck } from 'lucide-react';
@@ -49,7 +50,7 @@ export default function WordCounter(props: any) {
         ref={textareaRef}
         onChange={hitungKata}
         autoFocus
-        className="min-h-[20rem]  md:placeholder:text-lg placeholder:text-base placeholder: selection:bg-indigo-600 selection:text-white selection:rounded-lg p-5 py-3 placeholder:text-gray-600 dark:placeholder:text-gray-400 dark:text-slate-100 text-black    text-lg"
+        className="min-h-[22rem]  md:placeholder:text-lg placeholder:text-base placeholder: selection:bg-indigo-600 selection:text-white selection:rounded-lg p-5 py-3 placeholder:text-gray-600 dark:placeholder:text-gray-400 dark:text-slate-100 text-black    text-lg"
         placeholder="Ketik atau tempelkan teks anda disini !"
       />
       <div className=" flex mt-4 justify-between gap-1 items-center">

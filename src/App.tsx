@@ -1,6 +1,9 @@
-import { useState } from 'react';
-import WordCounter from '@/components/WordCounter';
-import Navbar from '@/components/navigation/Navbar';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState, Suspense, lazy } from 'react';
+import NavbarSkeleton from './utils/skeleton/NavbarSkeleton';
+import WordCounterSkeleton from './utils/skeleton/WordCounterSkeleton';
+const Navbar = lazy(() => import('@/components/navigation/Navbar'));
+const WordCounter = lazy(() => import('@/components/WordCounter'));
 
 export default function App() {
   const [jumlah, setJumlah] = useState(0);
@@ -18,13 +21,17 @@ export default function App() {
 
   return (
     <>
-      <Navbar />
+      <Suspense fallback={<NavbarSkeleton />}>
+        <Navbar />
+      </Suspense>
       <div className="px-6 w-full">
-        <WordCounter
-          hitungKata={hitungKata}
-          jumlah={jumlah}
-          jumlahKarakter={jumlahKarakter}
-        />
+        <Suspense fallback={<WordCounterSkeleton />}>
+          <WordCounter
+            hitungKata={hitungKata}
+            jumlah={jumlah}
+            jumlahKarakter={jumlahKarakter}
+          />
+        </Suspense>
       </div>
     </>
   );
