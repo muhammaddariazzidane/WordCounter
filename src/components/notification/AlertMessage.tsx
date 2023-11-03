@@ -1,6 +1,10 @@
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
-export default function AlertMessage({ message }: { message: string }) {
+type IAlertMessage = {
+  message: string;
+};
+
+export default function AlertMessage({ message }: IAlertMessage) {
   return (
     <div className="max-w-sm mx-auto fixed top-12 left-4 right-4 ">
       <Alert className={`${message ? 'bg-green-700' : ''}`}>

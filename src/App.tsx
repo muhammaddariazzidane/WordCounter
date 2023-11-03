@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, Suspense, lazy } from 'react';
+import { useState, Suspense, lazy, ChangeEvent } from 'react';
 import NavbarSkeleton from './utils/skeleton/NavbarSkeleton';
 import WordCounterSkeleton from './utils/skeleton/WordCounterSkeleton';
 const Navbar = lazy(() => import('@/components/navigation/Navbar'));
@@ -9,7 +8,7 @@ export default function App() {
   const [jumlah, setJumlah] = useState(0);
   const [jumlahKarakter, setJumlahKarakter] = useState(0);
 
-  const hitungKata = (e: any) => {
+  const hitungKata = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const inputText = e.target.value;
     const kata = inputText
       .trim()
